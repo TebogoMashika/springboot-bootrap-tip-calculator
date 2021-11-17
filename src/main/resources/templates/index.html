@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Hello, world!</title>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="row justify-content-center position-absolute top-50 start-50 translate-middle " style="width: 80%">
+
+        <div class="border d-flex rounded shadow-lg border-0">
+          <div class="col-6"  >
+            <div class="card m-3  border-0">
+              <!--- Bill section--->
+              <div class="card-body p-4 mb-4 ">
+
+                <label class="text-muted " style="color:white;font-weight: bold">Bill</label>
+
+                <div class="input-group input-group-sm mb-3 flex-nowrap">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text border fas fa-dollar-sign" id="bill-icon-wrapping"></span>
+                  </div>
+                  <input type="text" class="form-control fas fa-dollar-sign"  aria-describedby="bill-icon-wrapping">
+                </div>
+                <!--- end of Bill section --->
+
+                <!--- Select Tip % section --->
+                <label class="text-muted " style="color:white; font-weight: bold">Select Tip %</label>
+                <div class="mb-3 ">
+
+                  <div class="card">
+
+                    <div class="card-body ">
+                      <!--- first row --->
+                      <div class="row">
+                        <div class="col-3 bg-success mb-3 mx-1 rounded "  >
+                          <div class="text-center " >
+
+                            <input  type="submit" style="color:white; font-family:verdana; font-weight: 10px" width="200%" value="5%" class="border-0 bg-success">
+                          </div>
+                        </div>
+
+                        <div class="col-3 bg-success mb-3 mx-1 rounded "  >
+                          <div class="text-center" >
+
+                            <input  type="submit" style="color:white" width="200%" value="10%" class="border-0 bg-success">
+                          </div>
+                        </div>
+
+                        <div class="col-3 bg-success mb-3 mx-1 rounded"  >
+                          <div class="text-center" >
+
+                            <input  type="submit" style="color:white" width="200%" value="15%" class="border-0 bg-success">
+                          </div>
+                        </div>
+
+                        <!--- End of  first row --->
+
+                        <!--- second row --->
+                        <div class="row">
+                          <div class="col-3 bg-success mx-1 rounded"  >
+                            <div class="text-center" >
+
+                              <input  type="submit" style="color:white" width="200%" value="25%" class="border-0 bg-success">
+                            </div>
+                          </div>
+
+                          <div class="col-3 bg-success  mx-1 rounded"  >
+                            <div class="text-center" >
+
+                              <input  type="submit" style="color:white" width="200%" value="50%" class="border-0 bg-success">
+                            </div>
+                          </div>
+
+                          <div class="col-4 bg-success  mx-1 rounded"  >
+                            <div class="text-center" >
+
+                              <input  type="submit" style="color:white" width="200%" value="Custom" class="border-0 bg-success ">
+                            </div>
+                          </div>
+
+                          <!--- End of second row --->
+                        </div>
+
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <!---End of Select Tip % section --->
+
+                <!---Number of People section --->
+
+                <label class="text-muted mb-1 " style="color:white; font-weight: bold">Number of People</label>
+
+                <div class="input-group flex-nowrap ">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text border fas fa-user" id="person-icon-wrapping"></span>
+                  </div>
+                  <input type="text" class="form-control fas fa-user"  aria-describedby="person-icon-wrapping">
+                </div>
+                <!---End of Number of People section --->
+              </div>
+
+            </div>
+
+
+          </div>
+
+          <!--------------------------- start of the second section ---------------------------->
+
+          <div class="col-6 ">
+
+            <div class="card mt-3  shadow-lg border-0">
+              <div class="card-body  p-4 mb-5 ">
+
+
+
+                <div class="card border-0 ">
+
+                  <div class="card-body ">
+
+                    <div class="text-muted " style="color:white; font-weight: bold">
+                      Tip Amount <span class="text-muted d-flex justify-content-end" style="font-size: 35px"> 0:00</span>
+                    </div>
+
+                    <div class="text-muted border-top" style="color:white; font-weight: bold">
+                      Total <span class="text-muted d-flex justify-content-end " style="font-size: 35px "> 0:00</span>
+                    </div>
+
+                    <div class="mt-4">
+                      <button type="reset" style="width: 100%" class="btn btn-success btn-lg btn-block ">RESET</button>
+                    </div>
+
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div> <!--- row --->
+
+    </div> <!--- container --->
+
+
+      <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+  </body>
+</html>
