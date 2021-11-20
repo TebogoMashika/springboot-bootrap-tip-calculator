@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,89 +9,101 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <title>Hello, world!</title>
+    <title>Tip Calculator</title>
   </head>
 
   <body>
 
-    <div class="container">
+    <div class="container" >
 
-      <div class="row justify-content-center position-absolute top-50 start-50 translate-middle " style="width: 80%">
 
-        <div class="border d-flex rounded shadow-lg border-0">
+
+      <div class="row justify-content-center position-absolute top-50 start-50 translate-middle " style="width: 60%">
+
+        <div class="border d-flex  shadow-lg border-0" style="border-radius: 3%">
           <div class="col-6"  >
-            <div class="card m-3  border-0">
-              <!--- Bill section--->
-              <div class="card-body p-4 mb-4 ">
+            <div class="card m-3  border-0" >
 
-                <label class="text-muted " style="color:white;font-weight: bold">Bill</label>
+              <div class="card-body p-4 mb-4 " >
 
-                <div class="input-group input-group-sm mb-3 flex-nowrap">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text border fas fa-dollar-sign" id="bill-icon-wrapping"></span>
+
+                <form th:action="@{/CalcTip}"  method="post">
+                  <!--- Bill section--->
+                  <label class="text-muted " style="color:white;font-weight: bold">Bill</label>
+
+                  <div class="input-group input-group-sm mb-3 flex-nowrap">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text border fas fa-dollar-sign" id="bill-icon-wrapping"></span>
+                    </div>
+                    <input type="text" th:name="billAmount"  class="form-control fas fa-dollar-sign"  aria-describedby="bill-icon-wrapping" required>
                   </div>
-                  <input type="text" class="form-control fas fa-dollar-sign"  aria-describedby="bill-icon-wrapping">
-                </div>
-                <!--- end of Bill section --->
+                  <!--- end of Bill section --->
 
-                <!--- Select Tip % section --->
-                <label class="text-muted " style="color:white; font-weight: bold">Select Tip %</label>
-                <div class="mb-3 ">
+                  <!--- Select Tip % section --->
+                  <label class="text-muted " style="color:white; font-weight: bold">Select Tip %</label>
+                  <div class="mb-3 ">
 
-                  <div class="card">
+                    <div class="card ">
 
-                    <div class="card-body ">
-                      <!--- first row --->
-                      <div class="row">
-                        <div class="col-3 bg-success mb-3 mx-1 rounded "  >
-                          <div class="text-center " >
-
-                            <input  type="submit" style="color:white; font-family:verdana; font-weight: 10px" width="200%" value="5%" class="border-0 bg-success">
-                          </div>
-                        </div>
-
-                        <div class="col-3 bg-success mb-3 mx-1 rounded "  >
-                          <div class="text-center" >
-
-                            <input  type="submit" style="color:white" width="200%" value="10%" class="border-0 bg-success">
-                          </div>
-                        </div>
-
-                        <div class="col-3 bg-success mb-3 mx-1 rounded"  >
-                          <div class="text-center" >
-
-                            <input  type="submit" style="color:white" width="200%" value="15%" class="border-0 bg-success">
-                          </div>
-                        </div>
-
-                        <!--- End of  first row --->
-
-                        <!--- second row --->
+                      <div class="card-body ">
+                        <!--- first row --->
                         <div class="row">
-                          <div class="col-3 bg-success mx-1 rounded"  >
-                            <div class="text-center" >
 
-                              <input  type="submit" style="color:white" width="200%" value="25%" class="border-0 bg-success">
+                          <div class="col-3 bg-success mb-3 mx-1 rounded "  >
+                            <div class="text-center " >
+                              <input  type="radio" th:name="percentage" name="percentage" style="color:white; font-family:verdana; font-weight: 10px" width="200%" value="5" class="border-0 bg-success">
+                              <label style="color:white">5%</label>
                             </div>
                           </div>
 
-                          <div class="col-3 bg-success  mx-1 rounded"  >
+                          <div class="col-3 bg-success mb-3 mx-1 rounded "  >
                             <div class="text-center" >
 
-                              <input  type="submit" style="color:white" width="200%" value="50%" class="border-0 bg-success">
+                              <input  type="radio" th:name="percentage" name="percentage"  style="color:white" width="200%" value="10" class="border-0 bg-success">
+                              <label style="color:white">10%</label>
                             </div>
                           </div>
 
-                          <div class="col-4 bg-success  mx-1 rounded"  >
+                          <div class="col-3 bg-success mb-3 mx-1 rounded"  >
                             <div class="text-center" >
 
-                              <input  type="submit" style="color:white" width="200%" value="Custom" class="border-0 bg-success ">
+                              <input  type="radio" th:name="percentage" name="percentage" style="color:white" width="200%" value="15" class="border-0 bg-success">
+                              <label style="color:white">15%</label>
                             </div>
                           </div>
 
-                          <!--- End of second row --->
+                          <!--- End of  first row --->
+
+                          <!--- second row --->
+                          <div class="row">
+                            <div class="col-3 bg-success mx-1 rounded"  >
+                              <div class="text-center" >
+
+                                <input  type="radio" th:name="percentage" name="percentage" style="color:white" width="200%" value="25" class="border-0 bg-success">
+                                <label style="color:white">25%</label>
+                              </div>
+                            </div>
+
+                            <div class="col-3 bg-success  mx-1 rounded"  >
+                              <div class="text-center" >
+
+                                <input  type="radio" th:name="percentage" name="percentage" style="color:white" width="200%" value="50" class="border-0 bg-success">
+                                <label style="color:white">50%</label>
+                              </div>
+                            </div>
+
+                            <div class="col-4 bg-success  mx-1 rounded"  >
+                              <div class="text-center" >
+
+                                <input  type="submit" th:name="percentage"  style="color:white" width="200%" value="Custom" class="border-0 bg-success ">
+                              </div>
+                            </div>
+
+                            <!--- End of second row --->
+                          </div>
+
+
                         </div>
-
 
                       </div>
 
@@ -99,23 +111,30 @@
 
                   </div>
 
-                </div>
+                  <!---End of Select Tip % section --->
 
-                <!---End of Select Tip % section --->
+                  <!---Number of People section --->
 
-                <!---Number of People section --->
+                  <label class="text-muted mb-1 " style="color:white; font-weight: bold">Number of People</label>
 
-                <label class="text-muted mb-1 " style="color:white; font-weight: bold">Number of People</label>
-
-                <div class="input-group flex-nowrap ">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text border fas fa-user" id="person-icon-wrapping"></span>
+                  <div class="input-group flex-nowrap ">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text border fas fa-user" id="person-icon-wrapping"></span>
+                    </div>
+                    <input type="text" th:name="numPeople" class="form-control fas fa-user"  aria-describedby="person-icon-wrapping" required>
                   </div>
-                  <input type="text" class="form-control fas fa-user"  aria-describedby="person-icon-wrapping">
-                </div>
-                <!---End of Number of People section --->
-              </div>
+                  <!---End of Number of People section --->
 
+                  <div class="mt-3">
+                    <button type="submit" style="width: 100%" class="btn btn-success btn-sm btn-block " >
+                      Submit
+                      <!--- <a th:href="@{/CalcTip}" class="text-decoration-none" style="color: white"> Submit</a>--->
+                    </button>
+                  </div>
+
+                </form>
+
+              </div>
             </div>
 
 
@@ -123,33 +142,36 @@
 
           <!--------------------------- start of the second section ---------------------------->
 
-          <div class="col-6 ">
 
-            <div class="card mt-3  shadow-lg border-0">
+          <div class="col-6 " th:each="tip : ${tipAmount}">
+
+            <div class="card mt-3  shadow-lg border-0" style="border-radius: 3%">
               <div class="card-body  p-4 mb-5 ">
 
+                <form action="">
+
+                  <div class="card border-0 ">
+
+                    <div class="card-body " >
+
+                      <div class="text-muted " style="color:white; font-weight: bold" >
+                        Tip Amount <span class="text-muted d-flex justify-content-end" th:text="${tip.tipAmount} ?: ('0:00')" style="font-size: 35px"> 0:00</span>
+                      </div>
+
+                      <div class="text-muted border-top" style="color:white; font-weight: bold">
+                        Total <span class="text-muted d-flex justify-content-end " th:text="${tip.total} ?: ('0:00')" style="font-size: 35px "> 0:00</span>
+                      </div>
+
+                      <div class="mt-4">
+                        <button type="reset" style="width: 100%" class="btn btn-success btn-lg btn-block ">RESET</button>
+                      </div>
 
 
-                <div class="card border-0 ">
-
-                  <div class="card-body ">
-
-                    <div class="text-muted " style="color:white; font-weight: bold">
-                      Tip Amount <span class="text-muted d-flex justify-content-end" style="font-size: 35px"> 0:00</span>
                     </div>
-
-                    <div class="text-muted border-top" style="color:white; font-weight: bold">
-                      Total <span class="text-muted d-flex justify-content-end " style="font-size: 35px "> 0:00</span>
-                    </div>
-
-                    <div class="mt-4">
-                      <button type="reset" style="width: 100%" class="btn btn-success btn-lg btn-block ">RESET</button>
-                    </div>
-
 
                   </div>
 
-                </div>
+                </form>
 
               </div>
 
